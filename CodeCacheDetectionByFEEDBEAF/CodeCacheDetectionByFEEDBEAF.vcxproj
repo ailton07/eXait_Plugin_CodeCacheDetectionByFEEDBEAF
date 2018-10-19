@@ -14,7 +14,7 @@
     <ProjectGuid>{F4818AFD-3315-491A-A9F6-362401099FC3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>eXait_CodeCacheDetectionByCode</RootNamespace>
-    <ProjectName>eXait_CodeCacheDetectionByCode</ProjectName>
+    <ProjectName>eXait_CodeCacheDetectionByFEEDBEAF</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -88,11 +88,13 @@ int DoMyJob(void)
 	std::vector<MEMPAGE> pageVector = GetPageVector();
 	int signatureCount = 0;
 	int pagecount = (int)pageVector.size();
+	unsigned long * lastOcorrencia = 0;
 
 	for (int i = 0; i < pagecount - 1; i++) {
 		auto & currentPage = pageVector.at(i);
 
 		if (getPageContent(reinterpret_cast<unsigned long *>(currentPage.mbi.BaseAddress)) == 0xfeedbeaf) {
+			lastOcorrencia = reinterpret_cast<unsigned long *>(currentPage.mbi.BaseAddress);
 			signatureCount++;
 		}
 	}
@@ -100,7 +102,7 @@ int DoMyJob(void)
 	printf("Signature count: %d\n", signatureCount);
 
 	if (signatureCount > 0) {
-		printf("PIN found\n");
+		printf("PIN found\n 0x%x\n", lastOcorrencia);
 		return 1;
 	}
 	return 0;
